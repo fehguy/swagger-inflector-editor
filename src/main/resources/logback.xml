@@ -5,6 +5,7 @@
         </layout>
     </appender>
     <logger name="io.swagger.inflector" level="ERROR"/>
+    <logger name="io.swagger.controllers.SpecsController" level="INFO"/>
     <root level="ERROR">
         <appender-ref ref="STDOUT"/>
     </root>
