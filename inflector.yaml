@@ -1,0 +1,7 @@
+controllerPackage: io.swagger.controllers
+rootPath: /v1
+swaggerUrl: ./src/main/resources/openapi3.yaml
+entityProcessors:
+  - json
+  - xml
+  - yaml

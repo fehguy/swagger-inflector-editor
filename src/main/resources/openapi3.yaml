@@ -1,0 +1,50 @@
+openapi: 3.0.1
+info:
+  title: Swagger Editor
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+#servers:
+#- url: http://localhost:8000
+paths:
+  /specs:
+    get:
+      tags:
+      - Specifications
+      summary: fetches a specification
+      operationId: getSpecification
+      responses:
+        200:
+          description: got it
+          content:
+            application/yaml:
+              schema:
+                $ref: '#/components/schemas/Specification'
+      x-swagger-router-controller: "io.swagger.controllers.SpecsController"
+    post:
+      tags:
+      - pet
+      summary: Saves a definition
+      operationId: saveSpecification
+      requestBody:
+        content:
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/Specification'
+        required: true
+      responses:
+        201:
+          description: Specification updated
+          content: {}
+      x-swagger-router-controller: "io.swagger.controllers.SpecsController"
+components:
+  schemas:
+    Specification:
+      type: string
